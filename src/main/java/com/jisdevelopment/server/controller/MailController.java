@@ -18,7 +18,7 @@ public class MailController {
     @PostMapping("/contacto")
     public String sendMail(@RequestBody MailBody mail) {
 
-        String message = "<b>Datos de contacto: </b>" + "<br/><br/><br/>" + "<b>Nombre: </b>" + mail.getNombre() + "<br/><hr/>" + "<b>Apellido: </b>" + mail.getApellido() + "<br/><hr/>" + "<b>E-mail: </b>" + mail.getEmailUsuario() + "<br/><hr/>" + "<b>Mensaje: </b>" + mail.getMensaje();
+        String message = "<b>Datos de contacto: </b>" + "<br/><br/><br/>" + "<b>Nombre: </b>" + mail.getNombre() + "<br/>" + "<b>Apellido: </b>" + mail.getApellido() + "<br/>" + "<b>E-mail: </b>" + mail.getEmailUsuario() + "<hr/><br/>" + "<b>Mensaje: </b><br/>" + mail.getMensaje();
 
         emailService.sendListEmail(mail.getAsunto(), message, mail.getEmailUsuario());
 
